@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ useEffect } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -26,56 +26,57 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+const bgcolours = ['#DCDBEA','#F5F1E3','#FAE9ED','#DFE9FA', '#FAEDE2'];
+const colours = ['#5049A8','#C8AA57','#FE6389','#1F59BA', '#FE8B25'];
+//  const getColour = () => colours[Math.floor(Math.random() * colours.length)];
+
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 700,
-    height: 10
+    minWidth: 650,
+    height: 12
   },
 });
 
-export default function Timesheet() {
-    const classes = useStyles();
-    return(
-   <TableContainer component={Paper}>
+const Timesheet = ({ getAllTimesheetAction, timesheets }) => {
+  useEffect(() => {
+    getAllTimesheetAction()
+  }, [getAllTimesheetAction])
+  
+  const classes = useStyles();
+  return (
+    <TableContainer component={Paper} className="Table-main" style={{ width: "1px !important" }}>
       <Table className={classes.table} aria-label="customized table">
-        <TableHead className="WithStyles\(ForwardRef\(TableCell\)\)-head-12">
+
+        <TableHead style={{ backgroundColor: "blue !important" }}>
           <TableRow>
-            <StyledTableCell>Project</StyledTableCell>
-            <StyledTableCell align="right">Date</StyledTableCell>
-            <StyledTableCell align="right">Start time</StyledTableCell>
-            <StyledTableCell align="right">Stop Time</StyledTableCell>
-            <StyledTableCell align="right">Duration</StyledTableCell>
+            <StyledTableCell align="left">Project</StyledTableCell>
+            <StyledTableCell align="left">Date</StyledTableCell>
+            <StyledTableCell align="left">Start time</StyledTableCell>
+            <StyledTableCell align="left">Stop Time</StyledTableCell>
+            <StyledTableCell align="left">Duration</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
+          {timesheets && timesheets.map((row, index) => (            
+            <StyledTableRow key={index}>
+              <StyledTableCell align="left" >
+              <span className="table-box" style={{backgroundColor: bgcolours[index], color: colours[index]}}>{row.projectcount}</span> &nbsp; &nbsp; {row.projectname}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="left">{row.date}</StyledTableCell>
+
+              <StyledTableCell align="left">{row.starttime}</StyledTableCell>
+              <StyledTableCell align="left">{row.stoptime}</StyledTableCell>
+              <StyledTableCell align="left">{row.duration}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-    )
+  )
 }
-  
+
+export default Timesheet
 
 

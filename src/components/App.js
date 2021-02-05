@@ -1,19 +1,28 @@
+
 import React from 'react';
-import './App.css'
+import { Provider } from 'react-redux';
+import './App.css';
+import configureStore from '../store/configureStore'
 import Sidebar from '../components/SideBar';
-import Home from '../components/Home'
-import { Router, Route, Switch, Redirect } from "react-router-dom";
-import {createBrowserHistory} from "history"
-function App() {
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+export const store = configureStore
+
+function App () {
   return (
-
-
+    <Provider store={store}>
     <div>
       <Router history={createBrowserHistory()}>
-      <Sidebar/>
+        <Sidebar />          
       </Router>
     </div>
-  );
+  </Provider>
+  )
 }
 
-export default App;
+export default App
+
+
+
+
