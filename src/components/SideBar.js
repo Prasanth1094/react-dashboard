@@ -175,7 +175,10 @@ export default function MiniDrawer() {
           </IconButton>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={9}>
-            <DropDownButton text="ADD PROJECT" icon="add" className=""  />
+              <div className="toolbar-left-side">
+              <DropDownButton text="ADD PROJECT" icon="add" className=""  />
+              </div>
+            
             </Grid>
             <Grid item xs={12} sm={3}>
               <Button text="ADD PROJECT" icon="add" className="add-" />

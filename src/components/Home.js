@@ -8,7 +8,6 @@ import Divider from '@material-ui/core/Divider';
 import { TimesheetContainer } from '../pages/Timesheet/containers';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,28 +25,37 @@ export default function Home() {
 
     return (
         <div>
-            <Grid container spacing={3}>               
-                <Grid item xs={12} sm={8}>
-                <tr>
-                            <th className="timesheet-channel-name">TimeSheet</th>
-                        </tr>
-                        <th>
-                            <div className="table-button-icon">
-                                <Button text="VIEW FULL SHEET" >
-                                </Button>
-                            </div>
-                        </th>
-                        <img className="dot-time" src={more} alt=""/>
-                        <TimesheetContainer />
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <div>Report
-                        <Report /></div>
-                </Grid>
-                
-            </Grid>
-        </div>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={12} md={8} className="timesheet-container">
+                    <Grid container className="timesheet-title-container" alignItems="center">
+                        <Grid item xs={8} className="timesheet-channel-name" > TimeSheet </Grid>
+                        <Grid item xs={3} >
+                            < Button text="VIEW FULL SHEET" >
+                            </Button>
+                        </Grid >
+                        <Grid item xs={1} >
+                            < img className="dot-time" src={more} alt="" /> </Grid> </Grid >
+
+                    {
+                        /* <table>
+                                            <tr>
+                                                    <th className="timesheet-channel-name">TimeSheet</th>
+                                                </tr>
+                                                <th>
+                                                    <div className="table-button-icon">
+                                                        <Button text="VIEW FULL SHEET" >
+                                                        </Button>
+                                                    </div>
+                                                </th>
+                                            </table>
+                                       
+                                                <img className="dot-time" src={more} alt=""/> */
+                    }
+                    <TimesheetContainer />
+                </Grid> <Grid item xs={12} sm={12} md={4}>
+                    <div > Report <Report /> </div> </Grid >
+
+            </Grid> </div >
     )
 
 }
-
