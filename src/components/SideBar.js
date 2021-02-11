@@ -176,19 +176,16 @@ export default function MiniDrawer() {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={9}>
               <div className="toolbar-left-side">
-              <DropDownButton text="ADD PROJECT" icon="add" className=""  />
+                <DropDownButton text="ADD PROJECT" icon="add" className="" />
               </div>
-            
+
             </Grid>
             <Grid item xs={12} sm={3}>
-              <Button text="ADD PROJECT" icon="add" className="add-" />
+              <Button text="ADD PROJECT" icon="add" className="add-icon" />
             </Grid>
-
           </Grid>
-
-
-
         </Toolbar>
+        <Divider className="" />
       </AppBar>
       <Drawer
         variant="permanent"

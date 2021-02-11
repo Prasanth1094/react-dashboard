@@ -91,14 +91,21 @@ color:#382F9C !important;
 margin: -31px 0 0 490px !important;
 float: inline-end !important;
 } */
-
-.MuiButton-contained.Home-main {
+.add-icon{
+    font-size: 17px;
+    font-weight: 800;
+}
+.MuiButton-contained.home-main {
     color: #382F9C !important;
     float: right;
-    font-weight: bold;
+    font-weight: 800;
     /* margin: 0 0 0 746px !important; */
 }
-
+.home-main .MuiIcon-colorPrimary {
+    color: #3f51b5;
+    font-size: 15px;
+    font-weight: 900;
+}
 .MuiButton-contained.Home-Table {
     color: #382F9C !important;
     float: right;
@@ -266,17 +273,37 @@ width: 687px !important;
     box-shadow: none;
     border: 1px solid #e2e0e0;
 }
-.MuiTableCell-head {
-    line-height: 1.5rem;
-    font-weight: bold;
-    font-size: 12px !important;
+.MuiTableCell-root {
+    display: table-cell;
+    padding: 12px;
+    font-size: 0.875rem;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    border-bottom: 0  !important;
+    letter-spacing: 0.01071em;
+    vertical-align: inherit;
+    border-right: 1px solid rgba(224, 224, 224, 1);
+}
+.MuiPaper-elevation4 {
+    box-shadow:none !important;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    /* box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%); */
+}
+.MuiTableCell-root:last-child{
+	border:none;
+}
+.MuiTableCell-head {   
+    font-size: 13px !important;
     color: #000 !important;
     background-color: rgb(255, 255, 255) !important;
+    line-height: 1rem !important;
+    font-weight: bold !important;
 }
 
 .MuiTableCell-body {
-    line-height: 1.5rem;
-    font-weight: bold;
+    line-height: 1rem !important;   
     font-size: 12px !important;
 }
 
@@ -296,9 +323,11 @@ width: 687px !important;
 
 .table-box {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
     border-radius: 1px;
     text-align: center;
     font-weight: bold;
+    vertical-align: middle;
+    padding-top: 3px;
 }

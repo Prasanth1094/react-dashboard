@@ -7,7 +7,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import { Grid } from '@material-ui/core';
+import Button from '../components/ui/ButtonTable'
+import more from '../Assets/more.png'
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -46,7 +48,16 @@ const Timesheet = ({ getAllTimesheetAction, timesheets }) => {
   
   const classes = useStyles();
   return (
-    <TableContainer component={Paper} className="Table-main" style={{ width: "1px !important" }}>
+    <div>
+    <Grid container className="timesheet-title-container" alignItems="center">
+    <Grid item xs={8} className="timesheet-channel-name" > Timesheet </Grid>
+    <Grid item xs={3} >
+        < Button text="VIEW FULL SHEET" >
+        </Button>
+    </Grid >
+    <Grid item xs={1} >
+        < img className="dot-time" src={more} alt="" /> </Grid> </Grid >
+    <TableContainer className="Table-main" style={{ width: "1px !important" }}>
       <Table className={classes.table} aria-label="customized table">
 
         <TableHead style={{ backgroundColor: "blue !important" }}>
@@ -74,6 +85,7 @@ const Timesheet = ({ getAllTimesheetAction, timesheets }) => {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   )
 }
 
