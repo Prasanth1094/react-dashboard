@@ -94,7 +94,8 @@ float: inline-end !important;
 
 .MuiButton-contained.Home-main{
 color: #382F9C !important;
-margin: 0 0 0 746px !important;
+float: right;
+/* margin: 0 0 0 746px !important; */
 }
 
 .MuiButton-contained.Home-Table{
@@ -113,11 +114,11 @@ font-weight: bold;
 
 
 /* Table */
-.MuiTableContainer-root {
+/* .MuiTableContainer-root {
 width: 102% !important;
 overflow-x: auto;
 height: 275px !important;
-}
+} */
 
 
 /* TransperantButton */
@@ -125,8 +126,8 @@ height: 275px !important;
 .MuiButton-outlinedPrimary {
 border: 1px solid #3f51b5;
 background-color: rgba(63, 81, 181, 0.04);
-width: 250px !important;
-margin: 8px 0 0 50px !important;
+width: 100%;
+margin: 8px 0 0 0 !important;
 }
 
 .transparent-buttonimage{
@@ -192,11 +193,11 @@ float: none
 }
 
 
-.Table-main{
+/* .Table-main{
 height: 220px !important;
 margin: -10px 0 0 0;
 width: 687px !important;
-}
+} */
 
 
 

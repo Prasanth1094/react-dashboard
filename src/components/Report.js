@@ -23,7 +23,7 @@ export default function SimpleCard() {
                 <div>
                     {(index === 0 ?
                         (
-                            <Card className="Report-Card" key={index} style={{ backgroundColor: "#3f51b5" }}>
+                            <Card className="" key={index} style={{ backgroundColor: "#3f51b5" }}>
                                 <div>
                                     <ListItem>
                                         <div style={{ width: "40px", backgroundColor:"rgb(42, 63, 172)", margin: "0px 10px", padding:"3px 7px", borderRadius:"2px" }}>
@@ -50,7 +50,7 @@ export default function SimpleCard() {
                         )
                         :
                         (
-                            <Card className="Report-Card" key={index} style={{ backgroundColor: "#F0F0F0" }}>
+                            <Card className="" key={index} style={{ backgroundColor: "#F0F0F0" }}>
                                 <div>
                                     <ListItem>
                                         <div style={{ width: "40px", backgroundColor:"#FFFFFF", margin: "0px 10px", padding:"3px 7px", borderRadius:"2px" }}>

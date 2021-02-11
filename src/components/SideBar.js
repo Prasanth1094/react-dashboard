@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
 
 
   gridroot: {
-    width: 'fit-content',    
+    width: 'fit-content',
     '& img': {
       margin: '0 25px',
       width: '20px',
@@ -153,14 +153,14 @@ export default function MiniDrawer() {
             [classes.hide]: !open,
           })}>
             <IconButton onClick={handleDrawerClose} className="hide-icon">
-              <img src={LeftArrow} alt=""/>
+              <img src={LeftArrow} alt="" />
 
             </IconButton>
           </div>
           <ListItemIcon className={clsx('topbar-logo', {
             [classes.hide]: open,
           })}>
-            <img src={Logo} alt=""/>
+            <img src={Logo} alt="" />
           </ListItemIcon>
           <IconButton
             // color="inherit"
@@ -173,10 +173,17 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            <DropDownButton text="ADD PROJECT" icon="add" className="add-" style={{ float: "right" }} />
-          </Typography>
-          <Button text="ADD PROJECT" icon="add" className="add-" style={{ float: "right" }} />
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={9}>
+            <DropDownButton text="ADD PROJECT" icon="add" className=""  />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <Button text="ADD PROJECT" icon="add" className="add-" />
+            </Grid>
+
+          </Grid>
+
+
 
         </Toolbar>
       </AppBar>
@@ -195,7 +202,7 @@ export default function MiniDrawer() {
       >
         <div className={classes.toolbar}>
           <ListItemIcon >
-            <img src={Logo} alt=""/>
+            <img src={Logo} alt="" />
           </ListItemIcon>
 
         </div>
@@ -204,7 +211,7 @@ export default function MiniDrawer() {
             <div>
               <ListItem button key={index} className="sidebartext">
                 <ListItemIcon>
-                  <img src={user.icon} alt=""/>
+                  <img src={user.icon} alt="" />
                 </ListItemIcon>
                 <ListItemText primary={user.name} className="sidebartext" />
               </ListItem>
@@ -214,14 +221,14 @@ export default function MiniDrawer() {
             </div>
           ))}
         </List>
-        <div className={classes.sidebarOverlay}>  <img src={SidebarOverlay} alt=""/></div> 
+        <div className={classes.sidebarOverlay}>  <img src={SidebarOverlay} alt="" /></div>
         <div className={classes.gridroot}>
           <Grid container alignItems="center" >
-            <img src={Notification} alt=""/>
+            <img src={Notification} alt="" />
             <Divider orientation="vertical" className="sidebarver-divider" flexItem />
-            <img src={Settings} alt=""/>
-            <Divider orientation="vertical"  className="sidebarver-divider" flexItem/>
-            <AccountCircleIcon className="avatar-image"/>            
+            <img src={Settings} alt="" />
+            <Divider orientation="vertical" className="sidebarver-divider" flexItem />
+            <AccountCircleIcon className="avatar-image" />
           </Grid>
         </div>
 
