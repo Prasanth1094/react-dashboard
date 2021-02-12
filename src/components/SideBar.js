@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -174,13 +175,13 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={9}>
+            <Grid item xs={8} sm={8} md={9}>
               <div className="toolbar-left-side">
                 <DropDownButton text="ADD PROJECT" icon="add" className="" />
               </div>
 
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={4} sm={4} md={3}>
               <Button text="ADD PROJECT" icon="add" className="add-icon" />
             </Grid>
           </Grid>
@@ -209,7 +210,7 @@ export default function MiniDrawer() {
         <List className="sidebartext">
           {data.map((user, index) => (
             <div>
-              <ListItem button key={index} className="sidebartext">
+              <ListItem button key={index} className="sidebartext" activeClassName="active">
                 <ListItemIcon>
                   <img src={user.icon} alt="" />
                 </ListItemIcon>
