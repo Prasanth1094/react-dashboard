@@ -207,23 +207,27 @@ export default function MiniDrawer() {
           </ListItemIcon>
 
         </div>
-        <List className="sidebartext">
+        <List >
           {data.map((user, index) => (
             <div>
-              <ListItem button key={index} className="sidebartext" activeClassName="active">
+            <div className="sidebar">
+              <ListItem button key={index}  activeClassName="active">
                 <ListItemIcon>
                   <img src={user.icon} alt="" />
                 </ListItemIcon>
-                <ListItemText primary={user.name} className="sidebartext" />
-              </ListItem>
-              {
-                index === 2 || index === 5 ? <Divider className="divider" /> : ""
-              }
+                <ListItemText primary={user.name}  />
+              </ListItem>             
             </div>
+             <div>
+             {
+               index === 2 || index === 5 ? <Divider className="divider" /> : ""
+             }
+             </div>
+             </div>
           ))}
         </List>
-        <div className={classes.sidebarOverlay}>  <img src={SidebarOverlay} alt="" /></div>
-        <div className={classes.gridroot}>
+        <div className={classes.sidebarOverlay}>  <img src={SidebarOverlay} alt="" className="sidebar-img"/></div>
+        <div className={clsx('sidebar-footer', classes.gridroot)}>
           <Grid container alignItems="center" >
             <img src={Notification} alt="" />
             <Divider orientation="vertical" className="sidebarver-divider" flexItem />
