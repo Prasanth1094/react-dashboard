@@ -6,7 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { Grid } from '@material-ui/core';
 import Button from '../components/ui/ButtonTable'
 import more from '../Assets/more.png'
@@ -23,14 +22,14 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
+      backgroundColor: "#f9f9f9",
     },
   },
 }))(TableRow);
 
 
-const bgcolours = ['#DCDBEA','#F5F1E3','#FAE9ED','#DFE9FA', '#FAEDE2'];
-const colours = ['#5049A8','#C8AA57','#FE6389','#1F59BA', '#FE8B25'];
+const bgcolours = ['#dcdbea','#f5f1e3','#FAE9ED','#DFE9FA', '#FAEDE2'];
+const colours = ['#382f9c','#c3a246','#ff5a82','#3e70c5', '#fe891f'];
 //  const getColour = () => colours[Math.floor(Math.random() * colours.length)];
 
 

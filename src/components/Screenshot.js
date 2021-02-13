@@ -10,6 +10,7 @@ import TransparentButton from '../components/ui/TransparentButton'
 import VideoCamera from '../Assets/video_camera.png'
 import Picture from '../Assets/picture.png'
 import ViewButton from '../components/ui/ViewButton'
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const data = [
-    { id: 1, name: "shot_1_attach_1.png", icon: Picture, type:"image" },
-    { id: 2, name: "shot_1_attach_3.png", icon: Picture, type:"image"},
-    { id: 3, name: "screen Record_12.mov", icon: VideoCamera, type:"video" },
+    { id: 1, name: "shot_1_attach_1.png", icon: Picture, type: "image" },
+    { id: 2, name: "shot_1_attach_3.png", icon: Picture, type: "image" },
+    { id: 3, name: "screen Record_12.mov", icon: VideoCamera, type: "video" },
 ];
 
 export default function InsetDividers() {
@@ -30,20 +31,23 @@ export default function InsetDividers() {
 
     return (
         <div>
-            {data.map((user, index) => (
+            <Grid container className="screenshots-title-container " alignItems="center">
+                <Grid item xs={8} className="timesheet-channel-name" > Screenshots </Grid>
+            </Grid>
+            {data.map((screenshot, index) => (
                 <List className={classes.root}>
                     <ListItem>
                         <ListItemAvatar>
-                            <img src={user.icon} alt="images" />
+                            <img src={screenshot.icon} alt="images" />
                         </ListItemAvatar>
-                        <ListItemText primary={user.name} />
-                        {user.name === true ? <ViewButton className="view-Button-text" text="view" /> :
-                            <ViewButton className="view-Button-text" text="view" type={user.type} />}
+                        <ListItemText primary={screenshot.name} />
+                        {screenshot.type === "image" ? <ViewButton className="view-Button-text" screenshot={screenshot} text="view" bgcolor="rgba(225, 225, 225, 0.57)" color="#3f51b5" style={{ borderColor: "black" }} /> :
+                            <ViewButton className="view-Button-text" text="Play" screenshot={screenshot} bgcolor="#3f51b5" color="white" />}
                     </ListItem>
-                    <Divider className="screenshot-devider" variant="inset" component="li" />
+                    <Divider className="screenshot-divider" component="li" />
                 </List>
             ))}
-            <TransparentButton text="VIEW ALL"/>
+            <TransparentButton text="VIEW ALL" margin="18px 0 0 15px" width="92%" />
         </div>
     );
 }

@@ -1,26 +1,66 @@
+html {
+  scrollbar-width: none;
+}
+body{
+    background-color: rgb(255, 255, 255) !important;     
+}
 
 .makeStyles-drawerOpen-7 {
     width: 240px;
     transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
-    background-color: #382F9C !important
+    scrollbar-width: none;
+    background-color: #382F9C !important;
 }
 
 .makeStyles-drawerClose-8 {
     width: 73px;
+    scrollbar-width: none;
     background-color: #382F9C !important;
 }
-
 .sidebar {
     color: #bbb8dd !important;   
     margin-bottom: 5px;
     margin-top: 5px;
 }
-.sidebar-img{
-    width: 32px;
-    height: 190px;
+.nav-link{
+    color: #bbb8dd; 
+}
+.nav-link:hover{
+    color: #bbb8dd; 
+}
+.logo-icon {
+    width: 22px !important;
+    height: 22px;
+}
+.topbar-logo{
+    margin-left:-8px
+}
+.sidebar-img{   
+    padding-right:20px;
+}
+.sidebar-icon{
+    width: 22px !important;
+    height: 22px;
+}
+.sidebar-text{
+    position: relative;
+    top: 3px;
 }
 .sidebar .MuiTypography-displayBlock {   
     font-size: 13px !important;
+    
+}
+.overlay-div{
+    z-index: 1;
+}
+.overlay-img{
+    width: 32px;
+    height: 190px;   
+}
+.header-divider{
+    border: none;
+    height: 0px !important;
+    margin: 0;
 }
 .MuiTypography-body1 {
     font-size: 1rem;
@@ -29,15 +69,6 @@
     line-height: 1.5;
     letter-spacing: 0.00938em;
 }
-
-
-/* .MuiDivider-root {
-border: none;
-height: 1px;
-margin: 0;
-flex-shrink: 0;
-background-color: rgba(0, 0, 0, 0.12);
-} */
 
 .MuiDivider-root.divider {
     border: none;
@@ -71,74 +102,42 @@ background-color: rgba(0, 0, 0, 0.12);
 /* Button */
 
 
-/* .content-Button{
-background-color: #E9E8F4 !important;
-color:#382F9C !important;
-margin: -31px 0 0 490px !important;
-float: inline-end !important;
-} */
+
 .add-icon{
     font-size: 17px;
     font-weight: 800;
 }
-.MuiButton-contained.home-main {
-    color: #47408e !important ;
+.MuiButton-contained.dashboard-main {
+    color: #382f9c !important ;
     float: right;
     font-weight: 800;
     box-shadow: none;
-    background-color: #EAE8F5;
+    background-color: #e9e8f4;
     /* margin: 0 0 0 746px !important; */
 }
-.home-main .MuiIcon-colorPrimary {
-    color: #3f51b5;
+.dashboard-main .MuiIcon-colorPrimary {
+    color: #382f9c;
     font-size: 15px;
     font-weight: 900;
 }
-.MuiButton-contained.Home-Table {
-    color: #3B337C !important;
+.MuiButton-contained.dashboard-Table {
+    color: #382f9c !important;
     float: right;
     font-weight: bold;
     box-shadow: none;
-    background-color: #e9e7f4;
+    background-color: #e9e8f4;
     margin: 0 -12px 0 0 !important;
 }
-body{
-    background-color: rgb(255, 255, 255); 
-}
+
 
 /* Dashboard */
 
 .dashboard-container {
-    height: 350px;
+    height: 365px;
     background-color: rgb(255, 255, 255);
     /* border:2px solid rgb(224, 214, 214); */
     font-weight: bold;
 }
-
-
-/* Table */
-
-
-/* .MuiTableContainer-root {
-width: 102% !important;
-overflow-x: auto;
-height: 275px !important;
-} */
-
-
-/* TransperantButton */
-
-.MuiButton-outlinedPrimary {
-    border: 1px solid #3f51b5;
-    background-color: rgba(63, 81, 181, 0.04);
-    width: 100%;
-    margin: 8px 0 0 0 !important;
-}
-
-.transparent-buttonimage {
-    padding: 0px 10px 0 0px;
-}
-
 
 /* ViewButton */
 
@@ -153,8 +152,8 @@ height: 275px !important;
 }
 .timesheet-title-container{   
     margin-bottom: 15px;
-    font-weight: bolder;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 17px;
 }
 /* screenshot */
 
@@ -165,11 +164,11 @@ height: 275px !important;
 
 /* Record */
 
-.Report-Card {
+/* .Report-Card {
     height: 70px;
     width: 300px;
     margin: 20px 0 0 25px;
-}
+} */
 
 
 /* TODO */
@@ -178,22 +177,28 @@ height: 275px !important;
     width: 50px;
     height: 50px;
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 34px 0 0 0;
 }
 
 .Todo-Card-content {
     width: 600px;
     margin: -62px 0px 0px 70px;
     background-color: #FFFFFFFF;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 8px 1px 0px rgb(0 0 0 / 2%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
 }
 
+.Todo-Card-content1 {
+    width: 600px;
+    margin: -62px 0px 0px 70px;
+    background-color: #FFFFFFFF;
+    border: 1px solid #e3e3e3;
+    box-shadow: none !important;
+}
 .dot-time {
     float: right;
     margin: 16px 4px;
 }
-
-
-
 .add-proj {
     float: none
 }
@@ -218,11 +223,11 @@ width: 687px !important;
     background-color: rgb(224, 224, 224) !important;
     margin: 0 0 0 -2px !important;
     width: 1px !important;
-    height: 620px !important;
+    /* height: 620px !important; */
 }
 
 .MuiDivider-vertical.sidebarver-divider {
-    background-color: rgb(224, 224, 224) !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;    
     margin: 0 0 0 -2px !important;
 }
 
@@ -257,7 +262,7 @@ width: 687px !important;
 }
 .MuiTableCell-root {
     display: table-cell;
-    padding: 10px !important;
+    padding: 12px !important;
     font-size: 0.875rem;
     text-align: left;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -318,19 +323,96 @@ width: 687px !important;
 ::-webkit-scrollbar {
     width: 3px;
   }
-
+  -ms-overflow-style{
+    width: 3px; 
+  }
   .active {
-    background-color: gold;
-    color:Black ;
+    /* background-color: white; */
+    color:white ;
     font-weight:bold;
  }
 
  .sidebar-footer{
-    position: fixed;
+    position: sticky;
     bottom: 0px;
     background-color: #382F9C !important;
     width: 240px;
  }
-  
+ .sidebar-footeronhide{
+    position: sticky;
+    bottom: 0px;
+    background-color: #382F9C !important;
+    width: 240px;
+    margin-left: -8px;
+ }
+.report-title-container{
+    margin-top: 10px;
+    margin-bottom: 29px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+.Report-div{
+width: 100%;
+}
+
+.Report-card{
+    margin-bottom: 20px;   
+}
+
+.report-percent-card{
+    height: 25px;
+}
+
+
+.MuiButton-outlinedPrimary {
+    border: 1px solid #3f51b5;
+    background-color: rgba(63, 81, 181, 0.04);
+    width: 100%;
+    margin: 18px 0 0 0;
+    height: 45px;
+}
+.trans-button{
+    border-radius: 6px !important;
+}
+.transparent-buttonimage {
+    padding: 0px 10px 0 0px;
+    width: 25px;
+}
+
+.screenshot-divider {
+    width: 305px !important;
+    margin-left: 17px !important;
+}
+.screenshots-title-container{
+    margin-bottom:26px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+}
+.screenshot-text .MuiTypography-displayBlock {
+    display: block;
+    font-size: 14px !important;
+    font-weight: bold;
+}
+.todo-title-container{
+    margin-bottom:32px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+}
+@media (min-width: 600px){
+    .makeStyles-drawerClose-8 {
+        width: 63px !important;
+    }    
+    }  
  
+    .arrow-icon-left{
+        margin: 0 13px 0 -19px;
+    }
+
+    .curve{
+        margin: 0 0 0 5px;
+    }
   

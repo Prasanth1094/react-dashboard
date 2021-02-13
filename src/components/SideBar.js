@@ -1,38 +1,36 @@
 import React from 'react';
 import clsx from 'clsx';
-import { NavLink } from 'react-router-dom';
+import Dashboard from './Dashboard'
+import ActivityComp from '../components/Activity'
+import { Route, Switch, Redirect,NavLink } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Dashboard from '../Assets/speedometer.png'
-import Activity from '../Assets/graph.png'
-import Timesheet from '../Assets/timer_white.png'
-import ToDo from '../Assets/icons8-today-96.png'
-import Invoices from '../Assets/bill.png'
-import Projects from '../Assets/folder.png'
-import Help from '../Assets/help.png'
-import DownloadApp from '../Assets/download.png'
+import DashboardIcon from '../Assets/speedometer.png'
+import ActivityIcon from '../Assets/graph1.png'
+import TimesheetIcon from '../Assets/timer_white.png'
+import ToDoIcon from '../Assets/icons8-today-96.png'
+import InvoicesIcon from '../Assets/bill.png'
+import ProjectsIcon from '../Assets/folder.png'
+import HelpIcon from '../Assets/help.png'
+import DownloadAppIcon from '../Assets/download.png'
 import Logo from '../Assets/logo.png'
 import SidebarOverlay from '../Assets/sidebar_overlay.png'
 import Notification from '../Assets/notification.png'
 import Settings from '../Assets/settings.png'
 import LeftArrow from '../Assets/left_arrow.png'
-import Home from '../components/Home'
-import { Route, Switch, Redirect } from "react-router-dom";
 import Button from '../components/ui/Buttton'
 import DropDownButton from '../components/ui/DropDown'
 import Grid from '@material-ui/core/Grid';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import curve from '../Assets/curved.png'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -103,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
   gridroot: {
     width: 'fit-content',
     '& img': {
-      margin: '0 25px',
+      margin: '10px 25px',
       width: '20px',
       height: '20px',
     },
@@ -128,14 +126,14 @@ export default function MiniDrawer() {
 
   // const menus=[menu{name:"Dashboard",icon:Dashboard}]
   const data = [
-    { id: 1, name: "Dashboard", icon: Dashboard },
-    { id: 2, name: "Activity", icon: Activity },
-    { id: 3, name: "Timesheet", icon: Timesheet },
-    { id: 4, name: "To-Do", icon: ToDo },
-    { id: 5, name: "Invoices", icon: Invoices },
-    { id: 6, name: "Projects", icon: Projects },
-    { id: 7, name: "Help", icon: Help },
-    { id: 8, name: "DownloadApp", icon: DownloadApp },
+    { id: 1, name: "Dashboard", icon: DashboardIcon,path:"/dashboard"},
+    { id: 2, name: "Activity", icon: ActivityIcon,path:"/activity" },
+    { id: 3, name: "Timesheet", icon: TimesheetIcon,path:"/timesheet" },
+    { id: 4, name: "To-Do", icon: ToDoIcon,path:"/todo" },
+    { id: 5, name: "Invoices", icon: InvoicesIcon,path:"/invoices" },
+    { id: 6, name: "Projects", icon: ProjectsIcon,path:"/projects" },
+    { id: 7, name: "Help", icon: HelpIcon ,path:"/help"},
+    { id: 8, name: "DownloadApp", icon: DownloadAppIcon,path:"/downloadapp" },
 
   ];
 
@@ -154,14 +152,15 @@ export default function MiniDrawer() {
             [classes.hide]: !open,
           })}>
             <IconButton onClick={handleDrawerClose} className="hide-icon">
-              <img src={LeftArrow} alt="" />
+              <img src={curve} className="curve" alt=""/>
+              <img src={LeftArrow} alt="" className="arrow-icon-left"/>
 
             </IconButton>
           </div>
           <ListItemIcon className={clsx('topbar-logo', {
             [classes.hide]: open,
           })}>
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="" className="logo-icon"/>
           </ListItemIcon>
           <IconButton
             // color="inherit"
@@ -186,7 +185,7 @@ export default function MiniDrawer() {
             </Grid>
           </Grid>
         </Toolbar>
-        <Divider className="" />
+        <Divider className="header-divider" />
       </AppBar>
       <Drawer
         variant="permanent"
@@ -203,20 +202,17 @@ export default function MiniDrawer() {
       >
         <div className={classes.toolbar}>
           <ListItemIcon >
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="" className="logo-icon"/>
           </ListItemIcon>
 
         </div>
         <List >
-          {data.map((user, index) => (
-            <div>
-            <div className="sidebar">
-              <ListItem button key={index}  activeClassName="active">
-                <ListItemIcon>
-                  <img src={user.icon} alt="" />
-                </ListItemIcon>
-                <ListItemText primary={user.name}  />
-              </ListItem>             
+          {data.map((menu, index) => (
+            <div key={index}>
+            <div className="sidebar" >              
+               <NavLink className="nav-link" to={menu.path}>
+               <span className="sidebar-img"><img src={menu.icon} alt=""  className="sidebar-icon"/></span><span className="sidebar-text"> {menu.name}</span>
+                                    </NavLink>
             </div>
              <div>
              {
@@ -226,14 +222,18 @@ export default function MiniDrawer() {
              </div>
           ))}
         </List>
-        <div className={classes.sidebarOverlay}>  <img src={SidebarOverlay} alt="" className="sidebar-img"/></div>
-        <div className={clsx('sidebar-footer', classes.gridroot)}>
-          <Grid container alignItems="center" >
+        <div className="overlay-div">  <img src={SidebarOverlay} alt="" className="overlay-img"/></div>
+        <div className={clsx(classes.gridroot, {
+            ['sidebar-footer']: open,
+            ['sidebar-footeronhide']: !open,
+          })}>
+    
+          <Grid container alignItems="center" item xs={4} sm={12}>
             <img src={Notification} alt="" />
             <Divider orientation="vertical" className="sidebarver-divider" flexItem />
             <img src={Settings} alt="" />
             <Divider orientation="vertical" className="sidebarver-divider" flexItem />
-            <AccountCircleIcon className="avatar-image" />
+            <AccountCircleIcon className="avatar-image"/>
           </Grid>
         </div>
 
@@ -241,8 +241,9 @@ export default function MiniDrawer() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route path="/home" component={Home} />
-          <Redirect to="/home" />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/activity" component={ActivityComp} />
+          <Redirect to="/dashboard" />
         </Switch>
       </main>
     </div>

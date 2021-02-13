@@ -42,10 +42,10 @@ export default function SplitButton() {
         <Grid container direction="column" alignItems="center" style={{border:"1px solid whitesmoke"}}>
             <Grid item xs={12}>
                 <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-                    <Button style={{ textTransform:"capitalize", fontWeight:"normal", backgroundColor: "whitesmoke", color: "black",borderColor: "#d7d4cf" }}
+                    <Button style={{ textTransform:"capitalize", fontWeight:"normal", backgroundColor: "#f4f4f4", color: "black",borderColor: "#dadada" }}
                         onClick={handleClick}>{options[selectedIndex]}</Button>
                     <Button
-                        style={{ backgroundColor: "whitesmoke", color: "black",borderColor: "#d7d4cf" }}
+                        style={{ backgroundColor: "#f4f4f4", color: "black",borderColor: "#dadada" }}
                         size="small"
                         aria-controls={open ? 'split-button-menu' : undefined}
                         aria-expanded={open ? 'true' : undefined}

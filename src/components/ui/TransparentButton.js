@@ -6,7 +6,7 @@ const button = (props) => (
 
     <div>
       <div>
-        <Button variant="outlined" size="medium" color="primary" className="MuiButton-outlinedPrimary">
+        <Button variant="outlined" size="medium" color="primary"  className="MuiButton-outlinedPrimary trans-button" style={{ margin: props.margin,width: props.width }}>
         {props.icon?<img color="primary" className="transparent-buttonimage" src={props.icon} alt="icon"></img>:""}{props.text}
         </Button>
       </div>
