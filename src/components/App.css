@@ -406,6 +406,10 @@ width: 100%;
     .makeStyles-drawerClose-8 {
         width: 63px !important;
     }    
+    .MuiAppBar-colorPrimary {
+        color: #fff;
+        background-color: white !important;
+    }
     }  
  
     .arrow-icon-left{

@@ -157,10 +157,14 @@ export default function MiniDrawer() {
 
             </IconButton>
           </div>
+          
           <ListItemIcon className={clsx('topbar-logo', {
             [classes.hide]: open,
           })}>
+           
             <img src={Logo} alt="" className="logo-icon"/>
+            
+            
           </ListItemIcon>
           <IconButton
             // color="inherit"
@@ -224,8 +228,8 @@ export default function MiniDrawer() {
         </List>
         <div className="overlay-div">  <img src={SidebarOverlay} alt="" className="overlay-img"/></div>
         <div className={clsx(classes.gridroot, {
-            ['sidebar-footer']: open,
-            ['sidebar-footeronhide']: !open,
+            'sidebar-footer': open,
+            'sidebar-footeronhide': !open,
           })}>
     
           <Grid container alignItems="center" item xs={4} sm={12}>
