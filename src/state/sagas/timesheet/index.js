@@ -7,7 +7,7 @@ import { getAllTimesheetAction } from '../../actions/timesheet';
 function * getAllTimesheet () {
   try {
    // const uri = 'https://node-crud-api.herokuapp.com/timesheets';
-    const uri =https://nodejs-crud-5eo1.onrender.com/timesheets;
+    const uri ='https://nodejs-crud-5eo1.onrender.com/timesheets';
     const timesheets = yield call(Axios.get, uri)    
     yield put(getAllTimesheetAction.FULLFILLED(timesheets.data))
   } catch (error) {
